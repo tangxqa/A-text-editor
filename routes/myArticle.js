@@ -33,8 +33,11 @@ router.get('/view', function (req, res, next) {
 //请求单图文列表
 router.post('/my_single_article', function (req, res, next) {
     var request = require('./utils/httpclient').http(req, res);
-    request.get(global.config.api('my_single_article'),
-        req.query,
+    request.post(global.config.api('my_single_article'),
+        {
+            form: req.body,
+            json: false
+        },
         function (error, response, body) {
             res.render('tpl/my_single_article_list',
                 {
