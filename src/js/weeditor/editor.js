@@ -1266,7 +1266,7 @@ var uploadLocalImg=function(){
                  console.log("ajax成功"); 
                  console.log(result);
                  console.log(result.data);
-                 var result=JSON.parse(rs);
+                //  var result=JSON.parse(rs);
                   if(result.code==0){
                      htmlResult+=result.data.file+",";
                  }else{
@@ -1357,7 +1357,7 @@ var upImgs=function(){
 function uploadCallBack(chooseFile,result,num,flag){
   
    if(num==chooseFile.length){
-      if(flag==1){
+    //   if(flag==1){
           //往我的图片中插入记录
           $.ajax({
                 type: "post",
@@ -1383,9 +1383,9 @@ function uploadCallBack(chooseFile,result,num,flag){
             });
 
         
-      }else{
-        weui.toast("上传失败","error");
-      }
+    //   }else{
+    //     weui.toast("上传失败","error");
+    //   }
       
    }
 }
@@ -1832,7 +1832,8 @@ var init = function(){
         //点击封面设置
         var page_ind=0;
        $("#js_setCoverPic").click(function(){
-             if(!checkLogin()) return;
+        //tangxqa    
+        //  if(!checkLogin()) return;
              isSetCoverPic=1;
              $(".uploadImgDialog .modal-head").text("封面设置");
              openUploadShowHide();

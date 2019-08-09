@@ -196,7 +196,8 @@ define( 'common/header', ['common/base64', 'common/weui'], function( require, ex
     });
     //我的内容
     $("#my_article").click(function() {
-      if(!checkLogin()) return;
+      //tangxqa
+      // if(!checkLogin()) return;
       window.location.href = "/myArticle";
     });
 

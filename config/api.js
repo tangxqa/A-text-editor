@@ -38,16 +38,16 @@ module.exports={
 
 
     //sdj  
-    "add_my_single_article":"my_single_article/add.do",//添加单图文
-    "update_my_single_article":"my_single_article/update.do",//更新单图文
+    "add_my_single_article":"api/v1/article/saveMySingleArticle",//添加单图文
+    "update_my_single_article":"api/v1/article/saveMySingleArticle",//更新单图文
     "add_custom_template":"custom_template/add_custom_template.do",//另存为模板
     "add_picture":"picture/add_picture.do",//上传图片后插入我的图片
     "myimg_del":"picture/del_picture.do",//删除我的图片
     "collection_del":"collection/del.do",//取消收藏  ?type=1&other_id=1
 
     //我的内容-单图文
-    "my_single_article_count":"my_single_article/count.do",//我的图文-单图文-总数统计
-    "my_single_article":"my_single_article/page_list.do",//我的图文-单图文
+    "my_single_article_count":"api/v1/article/getMySingleArticleCount",//我的图文-单图文-总数统计
+    "my_single_article":"api/v1/article/getMySingleArticleList",//我的图文-单图文
     "del_my_single_article":"my_single_article/del.do",
     "my_single_article_detail":"my_single_article/detail.do",//获取单图文详情
 

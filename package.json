@@ -15,19 +15,19 @@
     "swig": "^1.4.2",
     "urlencode": "^1.1.0",
     "x-util": "0.0.8",
-    "crypto":"0.0.3"
+    "crypto": "0.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
+    "gulp-changed": "1.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-for-compass": "0.0.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inline-image": "^1.0.0",
     "gulp-min": "0.0.2",
-    "gulp-changed":"1.3.2",
     "gulp-seajs": "^0.4.2",
-    "gulp-seajs-combo":"",
+    "gulp-seajs-combo": "",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-yuicompressor": "0.0.3",

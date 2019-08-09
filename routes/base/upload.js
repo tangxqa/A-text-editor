@@ -18,7 +18,7 @@ router.post('/qiniu_upload_img',multipartMiddleware, function(reqq, res) {
 			 host:global.config.file_server_host,//远端服务器域名
 			 port:global.config.file_server_port,//远端服务器端口号
 			 method:'POST',
-	         path:'/upload/qiniu_upload_img.do',//上传服务路径
+	         path: '/api/v1/ueditor/upload',//上传服务路径
 	         headers:{
 	            'Content-Type':'multipart/form-data; boundary=' + boundaryKey,
 	             'Connection':'keep-alive'
@@ -38,8 +38,15 @@ router.post('/qiniu_upload_img',multipartMiddleware, function(reqq, res) {
             result += chunk;
         });
         res1.on('end', function() {
-            //console.log('result:' + result);
-            res.send(result)
+            console.log('result:' + result);
+            var json = JSON.parse(result);
+            json.data.file = global.config.api_domain + json.data.file;
+            res.send(JSON.stringify(json))
+            // res.send({
+            //     "original": filefile.originalFilename, "name": filefile.originalFilename,
+            //     "url": global.config.api_domain + json.data.file,
+            //     "size": filefile.size, "type": filefile.type, "state": "SUCCESS"
+            // });
         })
 
     });

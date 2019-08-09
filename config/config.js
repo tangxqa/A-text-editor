@@ -15,7 +15,7 @@
 ** 2. test         测试环境
 ** 3. production   线上环境
 **/
-const env = "test";//默认测试环境
+const env = "development";//默认测试环境
 
 const viewCache = false;
 const sessionOption = {
