@@ -74,11 +74,18 @@ router.post('/del_my_single_article', function (req, res, next) {
 //获取一个单图文详情
 router.post('/my_single_article_detail', function (req, res, next) {
     var request = require('./utils/httpclient').http(req, res);
-    request.post(global.config.api('my_single_article_detail'),
-        {
-            form: req.body,
-            json: false
-        },
+    // request.post(global.config.api('my_single_article_detail'),
+    //     {
+    //         form: req.body,
+    //         json: false
+    //     },
+    //     function (error, response, body) {
+    //         res.send(body);
+    //     }
+    // );
+
+    request.get(global.config.api('my_single_article_detail'),
+        {"uuid":req.body.uuid},
         function (error, response, body) {
             res.send(body);
         }
