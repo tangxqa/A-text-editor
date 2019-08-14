@@ -4,7 +4,7 @@ var router = express.Router();
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
-router.post('/qiniu_upload_img',multipartMiddleware, function(reqq, res) {
+router.post('/appplat_upload_img',multipartMiddleware, function(reqq, res) {
 
 	 var filefile = reqq.files.file;
 	 //console.log(filefile);

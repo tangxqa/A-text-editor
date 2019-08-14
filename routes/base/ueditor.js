@@ -79,7 +79,7 @@ router.post('/loadconfig', multipartMiddleware, function (reqq, res, next) {
         host: global.config.file_server_host,//远端服务器域名
         port: global.config.file_server_port,//远端服务器端口号
         method: 'POST',
-        path: '/api/v1/ueditor/upload',//上传服务路径
+        path: global.config.api('appplat_upload_img'),//上传服务路径
         headers: {
             'Content-Type': 'multipart/form-data; boundary=' + boundaryKey,
             'Connection': 'keep-alive'

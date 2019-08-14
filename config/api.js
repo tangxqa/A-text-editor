@@ -25,7 +25,7 @@ module.exports={
     "onlineimg_list":"load_image/list.do",//检索百度图片接口
     "onlineimg_list_json":"load_image/list.do",//检索百度图片接口
     "upload_files":"upload/upload_files.do",//多文件上传接口
-    "qiniu_upload_img":"upload/qiniu_upload_img.do",//单文件上传接口
+    "appplat_upload_img":"api/v1/ueditor/upload",//单文件上传接口
     "online_search":"upload/upload_url.do",//在线图片上传
     "collected_list":"collection/page_list.do",//样式收藏列表【type】[userid]  模板收藏列表【】[userid]同一个
     "collect_add":"collection/add.do",//样式收藏接口【操作两张表】和模板收藏接口【操作两张表】是同一个接口
@@ -48,7 +48,7 @@ module.exports={
     //我的内容-单图文
     "my_single_article_count":"api/v1/article/getMySingleArticleCount",//我的图文-单图文-总数统计
     "my_single_article":"api/v1/article/getMySingleArticleList",//我的图文-单图文
-    "del_my_single_article":"my_single_article/del.do",
+    "del_my_single_article":"api/v1/article/delete",
     "my_single_article_detail":"api/v1/article/getMySingleArticleDetail",//获取单图文详情
 
     //我的内容-多图文

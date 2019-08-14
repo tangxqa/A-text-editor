@@ -1211,7 +1211,7 @@ define(function (require, exports, module) {
         console.log("要上传的文件对象列表：" + fd);
         $.ajax({
             type: "post",
-            url: "/upload/qiniu_upload_img?_dc=" + Math.random(), //请求的url
+            url: "/upload/appplat_upload_img?_dc=" + Math.random(), //请求的url
             data: fd,
             processData: false,
             //必须false才会自动加上正确的Content-Type   
@@ -1255,7 +1255,7 @@ define(function (require, exports, module) {
                     console.log("要上传的文件对象列表：" + fd);
                     $.ajax({
                         type: "post",
-                        url: "/upload/qiniu_upload_img?_dc=" + Math.random(), //请求的url
+                        url: "/upload/appplat_upload_img?_dc=" + Math.random(), //请求的url
                         data: fd,
                         processData: false,
                         //必须false才会自动加上正确的Content-Type   
