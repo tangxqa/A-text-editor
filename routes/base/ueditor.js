@@ -73,13 +73,13 @@ router.post('/loadconfig', multipartMiddleware, function (reqq, res, next) {
     //console.log("file_server_host:"+global.config.file_server_host);
     //console.log("file_server_port:"+global.config.file_server_port);
 
-    var url = global.config.api_domain + "api/v1/ueditor/upload"
+    // var url = global.config.api_domain + "api/v1/ueditor/upload"
 
     var options = {
-        // host: global.config.file_server_host,//远端服务器域名
-        // port: global.config.file_server_port,//远端服务器端口号
+        host: global.config.file_server_host,//远端服务器域名
+        port: global.config.file_server_port,//远端服务器端口号
         method: 'POST',
-        // path: '/api/v1/ueditor/upload',//上传服务路径
+        path: '/api/v1/ueditor/upload',//上传服务路径
         headers: {
             'Content-Type': 'multipart/form-data; boundary=' + boundaryKey,
             'Connection': 'keep-alive'
@@ -92,7 +92,7 @@ router.post('/loadconfig', multipartMiddleware, function (reqq, res, next) {
     //http://tool.oschina.net/commons/  Content-Type 各文件类型对照表
 
     //发送请求
-    var req = http.request(url, options, function (res1) {
+    var req = http.request(options, function (res1) {
         var result = '';
         res1.setEncoding('utf8');
         res1.on('data', function (chunk) {

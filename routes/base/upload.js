@@ -40,7 +40,6 @@ router.post('/qiniu_upload_img',multipartMiddleware, function(reqq, res) {
         res1.on('end', function() {
             console.log('result:' + result);
             var json = JSON.parse(result);
-            json.data.file = global.config.api_domain + json.data.file;
             res.send(JSON.stringify(json))
             // res.send({
             //     "original": filefile.originalFilename, "name": filefile.originalFilename,
