@@ -11,6 +11,6 @@
 module.exports={
 	"file_server_host": "localhost",
     "file_server_port": 8082,
-    "api_domain": "http://localhost:8082/"
+    "api_domain": "https://web.rrs.com/article/web/"
 };
 

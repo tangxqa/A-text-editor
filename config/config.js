@@ -37,8 +37,8 @@ exports.api_domain = app.api_domain;
 
 exports.title = "WeEditor";
 
-exports.file_server_host = app.file_server_host;
-exports.file_server_port = app.file_server_port;
+// exports.file_server_host = app.file_server_host;
+// exports.file_server_port = app.file_server_port;
 
 exports.viewCache = viewCache;
 exports.sessionOption = sessionOption;

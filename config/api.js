@@ -39,7 +39,7 @@ module.exports={
 
     //sdj  
     "add_my_single_article":"api/v1/article/saveMySingleArticle",//添加单图文
-    "update_my_single_article":"api/v1/article/saveMySingleArticle",//更新单图文
+    "update_my_single_article":"api/v1/article/updateMySingleArticle",//更新单图文
     "add_custom_template":"custom_template/add_custom_template.do",//另存为模板
     "add_picture":"picture/add_picture.do",//上传图片后插入我的图片
     "myimg_del":"picture/del_picture.do",//删除我的图片
