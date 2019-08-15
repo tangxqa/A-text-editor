@@ -232,6 +232,7 @@ router.get('/view_multi_item', function (req, res, next) {
             res.render('weeditor/article_view',
                 {
                     page: body.data,
+                    picStyle: body.data.show_cover_pic ? {display:'block'} : {display:'none'}
                 });
         }
     );

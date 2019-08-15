@@ -1084,6 +1084,7 @@ define(function (require, exports, module) {
         var digest = $("#digest").val();//获取摘要字段
         var content_source_url = $("#content_source_url").val();//原文链接
         var ascription = $("#ascription option:selected").val();//文章归属哪个公众号[不填的时候每个文章都有]
+        var category = $("#category option:selected").val();//分类
         if (content == '' || title == '' || author == '') {
             weui.toast("正文、标题、作者均不能为空！", "warn", 800);
             return false;
@@ -1096,7 +1097,7 @@ define(function (require, exports, module) {
             weui.toast("作者过长！", "warn", 800);
             return false;
         }
-        if (digest.length > 120) {
+        if (digest.length > 10000) {
             weui.toast("摘要过长！", "warn", 800);
             return false;
         }
@@ -1118,6 +1119,7 @@ define(function (require, exports, module) {
                 "author": author,//作者
                 "digest": digest,//摘要
                 "content_source_url": content_source_url,//原文链接
+                "category": category,
                 "show_cover_pic": 1,//是否显示封面
                 "article_ascription_num": ascription,//文章归属哪个公众号[不填的时候每个文章都有]
                 "cover_pic": coverPic//封面图片地址
@@ -1125,6 +1127,9 @@ define(function (require, exports, module) {
             success: function (data) {
                 if (data.code == 0) {
                     weui.toast("文章保存成功", "success");
+                    setTimeout(function () {
+                        window.location.href = "/myArticle";
+                    }, 2000)
                 } else {
                     weui.toast(data.msg, "error");
                 }
@@ -1359,36 +1364,36 @@ define(function (require, exports, module) {
 
         if (num == chooseFile.length) {
             // if (flag == 1) {
-                //往我的图片中插入记录
-                //tangxqa
-                //   $.ajax({
-                //         type: "post",
-                //         dataType: "json",
-                //         url: "add_picture?_dc="+Math.random(), 
-                //         data: {
-                //             "urls":result,//内容
-                //             "type": "456",//标题
-                //             "label":"123"
-                //         },
-                //         success: function (data) {  
-                //             if(data.code==0){
-                //                  $(".menu_btn.cur").click();
-                //                   closeDialog();//关闭窗口
-                //                   isInitMyImgs=1;
-                //                   alert(isInitMyImgs);
-                //                   initMyImgList();
-                //                   weui.toast("上传成功","success");
-                //             }else{
-                //                 weui.toast("上传失败","error");
-                //             }
-                //         }
-                //     });
-                $(".menu_btn.cur").click();
-                closeDialog();//关闭窗口
-                isInitMyImgs = 1;
-                // alert(isInitMyImgs);
-                initMyImgList();
-                weui.toast("上传成功", "success");
+            //往我的图片中插入记录
+            //tangxqa
+            //   $.ajax({
+            //         type: "post",
+            //         dataType: "json",
+            //         url: "add_picture?_dc="+Math.random(), 
+            //         data: {
+            //             "urls":result,//内容
+            //             "type": "456",//标题
+            //             "label":"123"
+            //         },
+            //         success: function (data) {  
+            //             if(data.code==0){
+            //                  $(".menu_btn.cur").click();
+            //                   closeDialog();//关闭窗口
+            //                   isInitMyImgs=1;
+            //                   alert(isInitMyImgs);
+            //                   initMyImgList();
+            //                   weui.toast("上传成功","success");
+            //             }else{
+            //                 weui.toast("上传失败","error");
+            //             }
+            //         }
+            //     });
+            $(".menu_btn.cur").click();
+            closeDialog();//关闭窗口
+            isInitMyImgs = 1;
+            // alert(isInitMyImgs);
+            initMyImgList();
+            weui.toast("上传成功", "success");
 
             // } else {
             //     weui.toast("上传失败", "error");
@@ -1425,6 +1430,11 @@ define(function (require, exports, module) {
                     $("#title").val(result.data.title);
                     $("#author").val(result.data.author);
                     $("#digest").val(result.data.digest);
+                    $("#category option").each(function (i, n) {
+                        if ($(n).attr("value") == result.data.category) {
+                            $(n).attr("selected", true);
+                        }
+                    })
                     $("#content_source_url").val(result.data.content_source_url);
 
                     if (result.data.cover_pic) {
@@ -1461,6 +1471,11 @@ define(function (require, exports, module) {
                     $("#title").val(result.data.title);
                     $("#author").val(result.data.author);
                     $("#digest").val(result.data.digest);
+                    $("#category option").each(function (i, n) {
+                        if ($(n).attr("value") == result.data.category) {
+                            $(n).attr("selected", true);
+                        }
+                    })
                     $("#content_source_url").val(result.data.content_source_url);
                     if (result.data.thumb_url) {
                         $("#js_setCoverPic").attr("style", "background:#fff url(" + result.data.thumb_url + ") no-repeat center center;background-size: cover;");//封面
